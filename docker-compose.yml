@@ -1,0 +1,13 @@
+version: '3'
+services:
+  frontend-dev:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    image: frontend-dev
+    volumes:
+      - ./app:/usr/src/app
+    command: sh -c "yarn install"
+    tty: true
+    ports:
+      - 3000:3000
